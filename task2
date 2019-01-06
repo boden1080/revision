@@ -8,12 +8,12 @@ double grossIncome, taxPayable;
 int main()
 {
     void readInGrossIncome();
-    //void calculateTaxPayable();
-    //void displayNetIncome();
+    void calculateTaxPayable();
+    void displayNetIncome();
     
     readInGrossIncome();
-    //calculateTaxPayable();
-    //displayNetIncome();
+    calculateTaxPayable();
+    displayNetIncome();
     system("pause");
     return 0;
 }
@@ -25,3 +25,31 @@ void readInGrossIncome()
         cout << "Incorrect Value! Please enter your Gross Income: \234";
         cin >> grossIncome;
 }
+void calculateTaxPayable()
+{
+    //tax bands
+    const double TAXBAND1 = 11851;
+    const double TAXBAND2 = 46351;
+    const double TAXBAND3 = 150000;
+    //tax rates
+    const double TAXBASIC = 0.20; //£11,851-£46,350
+    const double TAXHIGHER = 0.40; //£46,351- £150,000
+    
+    double taxableIncome;
+    
+    if (grossIncome < TAXBAND1)
+        taxPayable = 0.0;
+    else
+        if (grossIncome < TAXBAND2)
+            taxableIncome = grossIncome - TAXBAND1;
+            taxPayable = taxableIncome * TAXBASIC;        
+        
+        
+}    
+void displayNetIncome()
+{
+    const double netIncome = grossIncome - taxPayable;
+    cout.setf(ios::fixed);
+    cout << setprecision(2);
+    cout << "The Net Income is \234" << netIncome << "\n\n";
+}   
