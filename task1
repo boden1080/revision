@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+double feet, inches, lengthInInches, lengthInMs;
+const double inchesPerFoot = 12, cmsPerInch = 2.5;
+int main()
+{
+  void readInImperialMeasurement();
+  void convertFeetAndInchesIntoMetres();
+  void showMetricMeasurement();
+  
+  readInImperialMeasurement();
+  convertFeetAndInchesIntoMetres();
+  showMetricMeasurement();
+  
+  system("pause");
+  return 0;
+}
+void readInImperialMeasurement()
+{
+ cout << "Enter the number of feet: ";
+ cin >> feet;
+ cout << "Enter the number of inches: ";
+ cin >> inches;
+}
+void convertFeetAndInchesIntoMetres()
+{
+ lengthInInches = (feet * inchesPerFoot) + inches;
+ lengthInMs = (lengthInInches * cmsPerInch) / 100;
+}
+void showMetricMeasurement()
+{
+    cout.setf(ios::fixed);
+    cout << setprecision(2);
+    cout << "The length is: " << lengthInMs << "metres \n" << endl;
+}
