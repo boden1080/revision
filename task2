@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+double grossIncome, taxPayable;
+
+int main()
+{
+    void readInGrossIncome();
+    //void calculateTaxPayable();
+    //void displayNetIncome();
+    
+    readInGrossIncome();
+    //calculateTaxPayable();
+    //displayNetIncome();
+    system("pause");
+    return 0;
+}
+void readInGrossIncome()
+{
+ cout << "Please enter your Gross Income: \234";
+ cin >> grossIncome;
+    if (grossIncome < 0)
+        cout << "Incorrect Value! Please enter your Gross Income: \234";
+        cin >> grossIncome;
+}
